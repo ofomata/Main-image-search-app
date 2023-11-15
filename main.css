@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+.logo{
+    font-size: 1.5rem;
+}
+.logo a{
+    text-decoration: none;
+    color: #3498db;
+}
+.logo span{
+    color: #e67e22;
+}
+
+input{
+    outline: none;
+    background: #E1E8ED;
+    border: none;
+    border-radius: 3em;
+    width: 80%;
+    max-width: 100%;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: center;
+}
+
+nav{
+    width: 100%;
+    height: 100vh;
+    background: black;
+    position: fixed;
+    top: 0;
+    text-transform: uppercase;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    text-transform: capitalize;
+    display: block;
+    padding: 1em;
+}
+nav ul li a:hover{
+    background: white;
+    color: black;
+}
+nav ul{
+    list-style: none;
+    text-align: center;
+    margin-top: 2em;
+}
+.close{
+    color: white;
+    font-size: 1.5rem;
+    padding: .5em;
+    margin: 1em
+}
+.close:hover{
+    background: white;
+    color: black;
+    border-radius: 50%;
+}
+.menu{
+    color: black;
+    font-size: 1.2rem;
+}
+.container{
+    margin: 2em 1em;
+}
+.search-results img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.search-results{
+    margin-top: 2em;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    
+}
+.search-results a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    padding: 1em;
+    display: block;
+    text-transform: capitalize;
+}
+
+#more-button{
+    background: #3498db;
+    padding: 1em;
+    color: white;
+    border-radius: 1em;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    margin: 2em 0;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;
+    display: none;
+}
+
+.open-nav{
+    transform: translateX(0%);
+}
+@media (min-width: 680px) {
+
+    header{
+        margin: 0 auto;
+        max-width: 1200px; 
+    }
+
+    input{
+        width: 100%;
+        padding-right: 100%;
+    }
+
+    nav .close{
+        display: none;
+    }
+
+    header .menu{
+        display: none;
+    }
+
+    nav{
+        transform: translateX(0);
+        background: unset;
+        height: auto;
+        width: unset;
+        position: unset;
+        margin-left: 20em;
+    }
+
+    nav ul li a{
+        color: black;
+        padding: unset;
+        display: unset;
+    }
+    nav ul li a:hover{
+        background: unset;
+        color: unset;
+    }
+    nav ul{
+        display: flex;
+        gap: 2em;
+        align-items: center;
+        margin: unset;
+        text-align: unset;
+    }
+    .container{
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    .search-result{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 2em;
+    }
+}
+
