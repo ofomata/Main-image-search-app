@@ -112,6 +112,7 @@ nav ul{
     cursor: pointer;
     display: block;
     display: none;
+    text-align: center;
 }
 
 .open-nav{
