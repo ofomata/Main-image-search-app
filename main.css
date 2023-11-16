@@ -3,6 +3,23 @@
     padding: 0;
 }
 
+:root{
+    --body-color: #fff;
+    --bg-color: #fff;
+    --color: #000;
+}
+
+.dark-theme{
+    --body-color: #0a0a00;
+    --bg-color: #fff;
+    --color: #fff;
+}
+
+body{
+    background: var(--body-color);
+    transition: background 0.5s;
+}
+
 header{
     display: flex;
     justify-content: space-between;
@@ -98,6 +115,7 @@ nav ul{
     padding: 1em;
     display: block;
     text-transform: capitalize;
+    background: var(--bg-color);
 }
 
 #more-button{
@@ -118,6 +136,33 @@ nav ul{
 .open-nav{
     transform: translateX(0%);
 }
+
+
+#dark-btn{
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    width: 45px;
+    border-radius: 15px;
+    background: #ccc;
+    padding: 2px 3px;
+    cursor: pointer;
+    display: flex;
+    transition: padding-left 0.5s, background 0.5s;
+}
+#dark-btn span{
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    display: inline-block;
+}
+#dark-btn.dark-btn-on{
+    padding-left: 23px;
+    background: #0a0a0a;
+}
+
+
 @media (min-width: 680px) {
 
     header{
@@ -145,10 +190,13 @@ nav ul{
         width: unset;
         position: unset;
         margin-left: 20em;
+        display: flex;
+        gap: 5em;
+        align-items: center;
     }
 
     nav ul li a{
-        color: black;
+        color: var(--color);
         padding: unset;
         display: unset;
     }
@@ -172,6 +220,11 @@ nav ul{
         display: grid;
         grid-template-columns: auto auto auto;
         gap: 2em;
+    }
+
+    #dark-btn{
+        top: unset;
+        right: unset;
     }
 }
 
