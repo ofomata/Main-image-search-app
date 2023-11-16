@@ -90,7 +90,7 @@ nav ul{
     border-radius: 50%;
 }
 .menu{
-    color: black;
+    color: var(--color);
     font-size: 1.2rem;
 }
 .container{
