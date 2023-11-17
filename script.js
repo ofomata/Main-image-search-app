@@ -16,26 +16,35 @@ async function searchImage() {
 
     const response = await fetch(url);
     const data = await response.json();
-
     const results = data.results;
 
     if (page === 1) {
         searchResult.innerHTML = "";
     }
 
-    results.map((result) => {
+    results.forEach(result => {
+
+        //Create a container "div" for each result
+
         const imageWrapper = document.createElement("div");
         imageWrapper.classList.add("search-results");
+        
+        //Create "img"  Element for each result
+
         const image = document.createElement("img");
         image.src = result.urls.small;
         image.alt = result.alt_description;
+
+        //Create "a"  Element for each result
+
         const imageLink = document.createElement("a");
         imageLink.href = result.links.html;
         imageLink.target = "_blank"
         imageLink.textContent = result.alt_description;
 
-        imageWrapper.appendChild(image);
-        imageWrapper.appendChild(imageLink);
+        //Append Elements
+
+        imageWrapper.append(image, imageLink);
         searchResult.appendChild(imageWrapper);
     });
 
@@ -71,21 +80,22 @@ close.addEventListener("click", () => {
     nav.classList.remove("open-nav");
 });
 
+
+
 //JavaScript for the dark mode button
 
 const darkMode = document.getElementById("dark-btn");
 
-darkMode.onclick = function() {
+darkMode.addEventListener("click", () =>{
     darkMode.classList.toggle("dark-btn-on");
     document.body.classList.toggle("dark-theme");
 
     if (localStorage.getItem("theme") === "light") {
         localStorage.setItem("theme", "dark");
-    }
-    else {
+    } else {
         localStorage.setItem("theme", "light");
     }
-}
+})
 
 if (localStorage.getItem("theme") === "light") {
     darkMode.classList.remove("dark-btn-on");
